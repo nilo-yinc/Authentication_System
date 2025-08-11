@@ -11,10 +11,10 @@ import userRoutes from "./routes/user.routes.js";
 
 dotenv.config();
 
-const app = express();
-app.use(
     cors({
-    origin:process.env.BASE_URL,
+   
+const app = express();
+app.use( origin:process.env.BASE_URL,
     methods: ["GET", "POST", "PUT", "DELETE",'OPTION'],
     allowedHeaders:["Content-Type","Authorization"]
 }));

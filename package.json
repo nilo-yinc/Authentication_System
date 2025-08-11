@@ -1,12 +1,12 @@
 {
-  "name": "fullstack",
+  "name": "version",
   "version": "1.0.0",
   "description": "a node project for authentication system",
   "keywords": [],
   "license": "ISC",
   "author": "niloymallik",
   "type": "module",
-  "main": "index.js",  
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js"
   },
