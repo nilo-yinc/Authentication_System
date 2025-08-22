@@ -31,11 +31,12 @@ if(existingUser){
 const user = await User.create({
     name,
     email,
-    password
+    password,
 
 
 })
 console.log(user);
+
     if(!user){
         return res.status(400).json({
             message :"User not registered",
