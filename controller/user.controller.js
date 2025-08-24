@@ -72,6 +72,7 @@ const transporter = nodemailer.createTransport({
 
   };
 
+
   await  transporter.sendMail(mailOption)
 
   res.status(201).json({
@@ -88,6 +89,18 @@ const transporter = nodemailer.createTransport({
 }
 
 };
+
+const verifyUser = asyn(req, res){
+  // get token from url
+  //validate
+  //find user based on the token 
+  //set isVerified is true
+  // remove verification token 
+  // save 
+  // return response 
+creq.params
+
+}
 
 export {registerUser};
 
