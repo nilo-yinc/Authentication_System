@@ -90,7 +90,7 @@ const transporter = nodemailer.createTransport({
 
 };
 
-const verifyUser = asyn(req, res){
+const verifyUser = async (req, res) => {
   // get token from url
   //validate
   //find user based on the token 
@@ -98,9 +98,25 @@ const verifyUser = asyn(req, res){
   // remove verification token 
   // save 
   // return response 
-creq.params
-
+const { token } = req.params;
+console.log(token);
+if(!token){
+  return res.status(400).json({
+    messege: "Invalid token",
+  });
 }
+const User = await User.findOne({ verificationToken : token});
+if(!user){
+  return res.status(400).json({
+    messege: "Invalid token",
+  });
+}
+user.isVerified = true;
+user.verificationToken = undefined;
+await user.save();
 
-export {registerUser};
+};
+
+
+export {registerUser,  verifyUser};
 
