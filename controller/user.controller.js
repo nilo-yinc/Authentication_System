@@ -182,5 +182,5 @@ res.status(200).json({
 }
 
 
-export {registerUser,  verifyUser};
+export {registerUser,  verifyUser, login };
 
