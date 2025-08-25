@@ -108,7 +108,7 @@ if(!token){
     messege: "Invalid token",
   });
 }
-const User = await User.findOne({ verificationToken : token});
+const user = await User.findOne({ verificationToken : token});
 if(!user){
   return res.status(400).json({
     messege: "Invalid token",
@@ -139,7 +139,7 @@ const isMatched = await bcrypt.compare(password,user.password)
 
 console.log(isMatched)
 
-if(ismatched){
+if(isMatched){
      
     return res.status(400).json({
       message : "invalid email or password",
