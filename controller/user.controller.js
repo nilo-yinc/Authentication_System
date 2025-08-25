@@ -147,6 +147,8 @@ if(ismatched){
 
 }
 
+//check user verified or not if not then verify email; 
+
 const token = jwt.sign(
   {id : user._id, role : user.role },
 
@@ -154,6 +156,25 @@ const token = jwt.sign(
     expiresIn:"24h"
   }
 );
+
+const cookieOptions = {
+  httpOnly: true,
+  secure: true,
+  maxAge : 24*60*60*1000
+}
+
+res.cookie("test", token)
+
+res.status(200).json({
+  sucess: true,
+  message:"Login successful",
+  token,
+  user:{
+    id:user._id,
+    name:user.name,
+    role:user.role
+  }
+})
 
   } catch (error) {
     
